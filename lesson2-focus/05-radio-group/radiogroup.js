@@ -31,6 +31,11 @@
 
         e.preventDefault();
 
+        if(this.buttons && this.buttons.length && this.focusedIdx > 0) {
+                   this.focusedIdx -= 1;
+               } else if(this.buttons && this.buttons.length && this.focusedIdx === 0) {
+                   this.focusedIdx = this.buttons.length - 1;
+               }
         // This seems like a good place to do some stuff :)
 
         break;
@@ -43,6 +48,11 @@
         e.preventDefault();
 
         // This seems like a good place to do some stuff :)
+        if(this.buttons && this.buttons.length && this.focusedIdx < this.buttons.length - 1) {
+                    this.focusedIdx += 1;
+                } else if(this.buttons && this.buttons.length && this.focusedIdx === this.buttons.length - 1) {
+                    this.focusedIdx = 0;
+                }
 
         break;
       }
